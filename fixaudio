@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "executing 'sudo killall coreaudiod'. Requires root."
+sudo killall coreaudiod

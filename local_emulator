@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~/Development/android/sdk/emulator/
+ip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | grep -v '172.'`
+echo "Starting Nexus_5X_API_23 and proxying through $ip:8880"
+emulator -netdelay none -netspeed full -avd Nexus_5X_API_23 -http-proxy http://$ip:8880

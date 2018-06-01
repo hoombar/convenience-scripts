@@ -1,0 +1,5 @@
+#!/bin/bash
+_complete_script_options() {
+  COMPREPLY=( $(compgen -W "`ls ~/Development/scripts | grep -v 'run'`" -- ${COMP_WORDS[COMP_CWORD]}) )
+}
+complete -F _complete_script_options run
